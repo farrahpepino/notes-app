@@ -1,0 +1,14 @@
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/bin/Debug/net9.0/server
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/bin/Debug/net9.0/server.deps.json
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/bin/Debug/net9.0/server.runtimeconfig.json
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/bin/Debug/net9.0/server.dll
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/bin/Debug/net9.0/server.pdb
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.GeneratedMSBuildEditorConfig.editorconfig
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.AssemblyInfoInputs.cache
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.AssemblyInfo.cs
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.csproj.CoreCompileInputs.cache
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.dll
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/refint/server.dll
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.pdb
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/server.genruntimeconfig.cache
+/Users/farrahpepino/Documents/GitHub/NotesApp/server/obj/Debug/net9.0/ref/server.dll
