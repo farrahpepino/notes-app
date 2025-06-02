@@ -1,0 +1,35 @@
+<div id="container">
+    <span>
+        <h1>QuickNotes</h1>
+    </span>
+
+    <button id="buttonCreate" (click)="addNote()">+ Create New Note</button>    
+</div>
+
+@if(isClicked){
+<section   class="modal-overlay modal-content">
+        <div id="formContainer">
+            <div id="header">
+                <h2>Create New Note</h2>
+            </div>
+            <form [formGroup] = "noteForm"  (ngSubmit)="handleSubmit()">
+                <label>Title
+                    <br>
+                    <textarea formControlName="title" rows="1" cols="30" placeholder="Note title"></textarea>
+        
+                </label>
+                <br>
+                <label>Content
+                    <br>
+                    <textarea formControlName="content" rows="8" cols="30" placeholder="Write your note here... "></textarea>
+        
+                </label>
+                <br>
+                <div class="buttonContainer">
+                    <button type="button" (click)="cancelNote()">Cancel</button>
+                    <button type="submit" id="addNote">Add Note</button>
+                </div>
+            </form>
+        </div>
+        </section>
+}

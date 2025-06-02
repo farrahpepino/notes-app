@@ -1,0 +1,57 @@
+<div id="noteContainer">
+    @for(note of notes; track note.id){
+    <a id="container" (click)="expand(note.id)">
+        <h3>{{note.title}}</h3>
+        <p>{{note.content}}</p>
+        <div class="circleButton" (click)="$event.stopPropagation()">
+            <button  type="button" class="circleButtonDesign edit" (click)="editNote(note.id)"><img src="edit.png" alt="Edit icon" width="15" height="15"></button>   
+            <button  type="button" class="circleButtonDesign delete" (click)="deleteNote(note.id)">
+                <img src="delete.png" alt="Delete icon" width="15" height="15"></button>
+        </div>
+    </a>
+  
+
+
+@if(isClicked==true){
+    <section   class="modal-overlay modal-content">
+            <div id="formContainer">
+                <div id="header">
+                    <h2>Edit Note</h2>
+                </div>
+                <form [formGroup] = "noteForm"  (ngSubmit)="handleSubmit()">
+                    <label>Title
+                        <br>
+                        <textarea formControlName="title" rows="1" cols="30" placeholder="{{selectedNote?.title}}"></textarea>
+            
+                    </label>
+                    <br>
+                    <label>Content
+                        <br>
+                        <textarea formControlName="content" rows="8" cols="30" placeholder="{{selectedNote?.content}}"></textarea>
+            
+                    </label>
+                    <br>
+                    <div class="buttonContainer">
+                        <button type="button" (click)="cancel()">Cancel</button>
+                        <button type="submit" id="save">Save changes</button>
+                    </div>
+                </form>
+            </div>
+            </section>
+    }
+    @else if(isExpanded==true && isClicked == false ){
+        <section   class="modal-overlay modal-content">
+            <div id="formContainer">
+                <span class="span">
+                    <h3>{{selectedNote?.title}}</h3> 
+                    <button  type="button" class="circleButtonDesign" (click)="close()">X</button> 
+                </span>  
+                <p>{{selectedNote?.content}}</p>
+            </div>
+            </section>
+    }
+}
+@empty{
+    <p class="empty">Your notebook is empty. Write something!</p>
+}
+</div>
