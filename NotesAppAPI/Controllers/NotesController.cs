@@ -6,8 +6,11 @@ using NotesAppAPI.Data;
 namespace NotesAppAPI.Controllers{
     [Route("api/[controller]")]
     [ApiController]
+
     public class NotesController: ControllerBase{
+
         private readonly DapperContext _context;
+
         public NotesController (DapperContext context){
             _context = context;
         }
@@ -86,7 +89,6 @@ namespace NotesAppAPI.Controllers{
        [HttpGet]
         public async Task<IActionResult> GetAllNotes()
         {
-
             try
             {
                 var query = "SELECT * FROM notes ORDER BY updated_at DESC";
