@@ -10,7 +10,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './note.component.css'
 })
 export class NoteComponent implements OnInit{
+  constructor(private noteService: NoteService){}
+
   notes: Note[] = [];  
+  noteForm = new FormGroup({
+    title: new FormControl(''),
+    content: new FormControl(''),
+  });
+  isClicked = false;
+  isExpanded = false;
+  selectedNote: Note | null = null;
+  selectedNoteId: number | null = null;
+
 
   ngOnInit():void {
     this.loadNotes();
@@ -27,11 +38,6 @@ export class NoteComponent implements OnInit{
     });
   }
 
-  constructor(private noteService: NoteService){}
-
-  isClicked = false;
-  isExpanded = false;
-  noteId: number | null = null;
 
   editNote(id: number){
     this.isClicked = true;
@@ -51,9 +57,6 @@ export class NoteComponent implements OnInit{
     this.isExpanded = false;
   }
  
-  selectedNote: Note | null = null;
-  selectedNoteId: number | null = null;
-
   getNote(id: number): void {
     this.selectedNote = {
       id: 0, 
@@ -69,14 +72,7 @@ export class NoteComponent implements OnInit{
       error: err => console.error('Failed to fetch note', err)
     });
   }
-  
-  
 
-  noteForm = new FormGroup({
-    title: new FormControl(''),
-    content: new FormControl(''),
-  });
-  
   handleSubmit(): void {
     if (!this.selectedNote) return;
   
@@ -100,13 +96,6 @@ export class NoteComponent implements OnInit{
     this.noteForm.reset();
   }
   
-  
-    
-  
-  
-
- 
-
   deleteNote(id: number) {
   
     this.noteService.deleteNote(id).subscribe({
@@ -116,11 +105,9 @@ export class NoteComponent implements OnInit{
       },
       error: (err) => console.error('Delete failed', err)
     });
-   
+
     this.loadNotes(); 
   }
-
-
 }
   
 

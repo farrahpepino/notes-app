@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 
 export interface Note{
   id: number;
@@ -39,5 +39,4 @@ export class NoteService {
     return this.http.put(`${this.apiUrl}/${id}`, note);
   }
   
-
 }
