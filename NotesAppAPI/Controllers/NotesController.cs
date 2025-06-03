@@ -37,7 +37,6 @@ namespace NotesAppAPI.Controllers{
         
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteNote(int id){
-        
             var query = "DELETE FROM notes WHERE id = @Id";
             using var connection = _context.CreateConnection();
             try{
@@ -70,9 +69,7 @@ namespace NotesAppAPI.Controllers{
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetNoteById(int id){
-          
             var query = "SELECT * FROM notes WHERE id = @Id";
-           
             using var connection = _context.CreateConnection();
             try{
             var note = await connection.QuerySingleOrDefaultAsync<Note>(query, new { Id = id });
