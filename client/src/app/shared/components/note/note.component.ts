@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 import { NoteService, Note } from '../../services/note.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-note',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './note.component.html',
   styleUrl: './note.component.css'
 })
@@ -37,7 +36,6 @@ export class NoteComponent implements OnInit{
       }
     });
   }
-
 
   editNote(id: number){
     this.isClicked = true;
