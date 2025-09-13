@@ -18,8 +18,8 @@ export class NoteService {
 
   constructor(private http: HttpClient) {}
  
-  createNote(note: Partial<Note>): Observable<string> {
-    return this.http.post(this.apiUrl, note, { responseType: 'text' });
+  createNote(note: Partial<Note>): Observable<Note> {
+    return this.http.post<Note>(this.apiUrl, note);
   }
 
   deleteNote(id: number) {
@@ -35,8 +35,8 @@ export class NoteService {
     return this.http.get<Note>(`${this.apiUrl}/${id}`);
   }
 
-  updateNote(id: number, note: Partial<Note>): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, note);
+  updateNote(id: number, note: Partial<Note>): Observable<Note> {
+    return this.http.put<Note>(`${this.apiUrl}/${id}`, note);
   }
   
 }

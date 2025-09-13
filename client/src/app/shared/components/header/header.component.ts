@@ -22,10 +22,6 @@ export class HeaderComponent {
     this.isClicked = false;
   }
  
-  
-
-  
-
   noteForm = new FormGroup({
     title: new FormControl('', Validators.required),
     content: new FormControl('', Validators.required),
@@ -46,7 +42,6 @@ export class HeaderComponent {
   }
   
   handleSubmit() {
-    if (!this.noteForm.valid) return;
     const newNote: Partial<Note> = {
       title: this.noteForm.value.title || 'Untitled',
       content: this.noteForm.value.content || ''
@@ -56,7 +51,7 @@ export class HeaderComponent {
       this.noteForm.reset(); 
       window.location.reload();
  
-      }   );
+      });
     
   }
   
