@@ -40,7 +40,6 @@ export class NoteComponent implements OnInit{
   editNote(id: number){
     this.isClicked = true;
     this.getNote(id);
-    console.log(id), "from editNote";
   }
   expand(id: number){
     this.isExpanded = true;
