@@ -27,7 +27,7 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
-// app.UseMiddleware<GlobalExceptionHandler>();
+app.UseMiddleware<GlobalExceptionHandler>();
 app.UseCors("AllowAll"); // Enable CORS
 app.MapControllers(); // Map controllers to handle requests
 app.Run(); // Start the application
